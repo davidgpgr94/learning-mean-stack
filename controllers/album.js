@@ -11,6 +11,7 @@ var Song = require('../models/song');
 function getAlbum(req, res) {
     var albumId = req.params.id;
 
+    //el populate es para que cargue en el atributo artist el json del artista asociado al album
     Album.findById(albumId).populate({path: 'artist'}).exec((err, album) => {
         if (err) {
             res.status(500).send({message: 'Error en la petición'});
