@@ -12,5 +12,6 @@ api.get('/song/:id', md_auth.ensureAuth, SongController.getSong);
 api.get('/songs/:album?', md_auth.ensureAuth, SongController.getSongs);
 api.post('/song', md_auth.ensureAuth, SongController.saveSong);
 api.put('/song/:id', md_auth.ensureAuth, SongController.updateSong);
+api.delete('/song/:id', md_auth.ensureAuth, SongController.deleteSong);
 
 module.exports = api;
