@@ -1,0 +1,1 @@
+First project to learn how to work with the stack MEAN (MongoDB-Express-Angular-NodeJs)
