@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 // cargar rutas api
+var user_routes = require('./routes/user');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json()); // para transformar en objetos json las peticiones http que nos llegue
@@ -13,9 +14,6 @@ app.use(bodyParser.json()); // para transformar en objetos json las peticiones h
 // configurar cabeceras http
 
 // rutas base
-
-app.get('/pruebas', (req, res) => {
-    res.status(200).send({message: 'Hello World!'});
-});
+app.use('/api', user_routes);
 
 module.exports = app;
