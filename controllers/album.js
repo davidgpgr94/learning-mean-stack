@@ -90,9 +90,37 @@ function updateAlbum(req, res) {
     });
 };
 
+function deleteAlbum(req, res) {
+    var albumId = req.params.id;
+
+    Album.findByIdAndRemove(albumId, (err, albumRemoved) => {
+        if (err) {
+            res.status(500).send({message: 'Error al eliminar el album'});
+        } else {
+            if (!albumRemoved) {
+                res.status(404).send({message: 'El album no ha sido eliminado'});
+            } else {
+                Song.find({album: albumRemoved._id}).remove((err, songRemoved) => {
+                    if(err) {
+                        res.status(500).send({message: 'Error al eliminar la cancion del album'});
+                    } else {
+                        if (!songRemoved) {
+                            res.status(404).send({message: 'La canción del album no ha sido eliminada'});
+                        } else {
+                            res.status(200).send({album: albumRemoved});
+                        }
+                    }
+                });
+            }
+        }
+    });
+
+};
+
 module.exports = {
     getAlbum,
     getAlbums,
     saveAlbum,
-    updateAlbum
+    updateAlbum,
+    deleteAlbum
 }
