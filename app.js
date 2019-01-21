@@ -7,6 +7,7 @@ var app = express();
 
 // cargar rutas api
 var user_routes = require('./routes/user');
+var artist_routes = require('./routes/artist');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json()); // para transformar en objetos json las peticiones http que nos llegue
@@ -15,5 +16,7 @@ app.use(bodyParser.json()); // para transformar en objetos json las peticiones h
 
 // rutas base
 app.use('/api', user_routes);
+app.use('/api', artist_routes);
+
 
 module.exports = app;
