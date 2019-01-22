@@ -43,6 +43,11 @@
 
   <div class="col-lg-6">
     <h1>Regístrate</h1>
+    <div *ngIf="alertRegister">
+      <div class="alert alert-info">
+        <strong>{{alertRegister}}</strong>
+      </div>
+    </div>
     <form class="col-md-10" #registerForm="ngForm" (ngSubmit)="onSubmitRegister()">
         <p>
             <label for="reg-name">Nombre:</label>
