@@ -13,6 +13,7 @@
 <div class="col-lg-12" *ngIf="!identity">
   <div class="col-lg-6">
     <h1>Identifícate</h1>
+    
     <form class="col-md-10" #loginForm="ngForm" (ngSubmit)="onSubmit()" >
       <p>
         <label for="log-email">Correo electrónico:</label>
@@ -25,6 +26,11 @@
           <label for="log-password">Contraseña:</label>
           <input type="password" class="form-control" required id="log-password" #password="ngModel" name="password" [(ngModel)]="user.password" />
       </p>
+      <div *ngIf="errorMessage">
+        <div class="alert alert-danger">
+          <strong>Error</strong> {{errorMessage}}
+        </div>
+      </div>
       <input type="submit" value="Entrar" class="btn btn-primary"/>
     </form>
   </div>
