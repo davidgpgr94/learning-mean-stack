@@ -8,7 +8,7 @@ import { User } from './models/user';
 export class AppComponent {
   public title = 'MUSIFY';
   public user: User;
-  public identity = true;
+  public identity;
   public token;
 
   constructor() {
