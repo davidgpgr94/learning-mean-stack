@@ -10,6 +10,7 @@ import { User } from './models/user';
 export class AppComponent implements OnInit {
   public title = 'MUSIFY';
   public user: User;
+  public user_register: User;
   public identity;
   public token;
   public errorMessage;
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit {
     private _userService: UserService
   ) {
     this.user = new User('', '', '', '', '', 'ROLE_USER', '');
+    this.user_register = new User('', '', '', '', '', 'ROLE_USER', '');
   }
 
   ngOnInit() {
@@ -82,5 +84,9 @@ export class AppComponent implements OnInit {
     this.identity = null;
     this.token = null;
     this.user = new User('', '', '', '', '', 'ROLE_USER', '');
+  }
+
+  public onSubmitRegister() {
+    console.log(this.user_register);
   }
 }

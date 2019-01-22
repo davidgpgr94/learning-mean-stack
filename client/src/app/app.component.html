@@ -43,22 +43,22 @@
 
   <div class="col-lg-6">
     <h1>Regístrate</h1>
-    <form class="col-md-10">
+    <form class="col-md-10" #registerForm="ngForm" (ngSubmit)="onSubmitRegister()">
         <p>
             <label for="reg-name">Nombre:</label>
-            <input type="text" class="form-control" required id="reg-name"/>
+            <input type="text" class="form-control" required id="reg-name" #name="ngModel" name="name" [(ngModel)]="user_register.name" />
         </p>
         <p>
             <label for="reg-surname">Apellidos:</label>
-            <input type="text" class="form-control" required id="reg-surname"/>
+            <input type="text" class="form-control" required id="reg-surname" #surname="ngModel" name="surname" [(ngModel)]="user_register.surname" />
         </p>
         <p>
             <label for="reg-email">Corre electrónico:</label>
-            <input type="text" class="form-control" required id="reg-email"/>
+            <input type="text" class="form-control" required id="reg-email" #email="ngModel" name="email" [(ngModel)]="user_register.email" />
         </p>
         <p>
             <label for="reg-password">Contraseña:</label>
-            <input type="password" class="form-control" required id="reg-password"/>
+            <input type="password" class="form-control" required id="reg-password" #password="ngModel" name="password" [(ngModel)]="user_register.password" />
         </p>
         <input type="submit" value="Registrar" class="btn btn-primary"/>
     </form>
