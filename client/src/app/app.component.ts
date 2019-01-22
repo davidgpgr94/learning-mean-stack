@@ -52,6 +52,7 @@ export class AppComponent implements OnInit {
               } else {
                 // creamos un elemento en el localstorage para tener el token disponible
                 localStorage.setItem('token', token);
+                this.user = new User('', '', '', '', '', 'ROLE_USER', '');
                 // console.log(token);
                 // console.log(identity);
               }
@@ -84,7 +85,6 @@ export class AppComponent implements OnInit {
     localStorage.clear();
     this.identity = null;
     this.token = null;
-    this.user = new User('', '', '', '', '', 'ROLE_USER', '');
   }
 
 
