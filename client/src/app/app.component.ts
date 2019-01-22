@@ -16,4 +16,8 @@ export class AppComponent {
     this.user = new User('', '', '', '', '', 'ROLE_USER', '');
   }
 
+  // tslint:disable-next-line:one-line
+  public onSubmit(){
+    console.log(this.user);
+  }
 }
