@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import {UserEditComponent} from './components/user-edit.component';
 import {ArtistListComponent} from './components/artist-list.component';
+import {HomeComponent} from './components/home.component';
 
 import {routing, appRoutingProviders} from './app.routing';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     UserEditComponent,
     ArtistListComponent
   ],
