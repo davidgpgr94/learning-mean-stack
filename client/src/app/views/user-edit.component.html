@@ -26,7 +26,7 @@
         </div>
         <p>
             <label for="image">Sube tu foto</label>
-            <input type="file" placeholder="Subir imagen..." id="image"/>
+            <input type="file" placeholder="Subir imagen..." id="image" (change)="fileChangeEvent($event)"/>
         </p>
 
         <input type="submit" value="Actualizar mis datos" class="btn btn-primary" />
