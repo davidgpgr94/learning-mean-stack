@@ -20,6 +20,15 @@
             <label for="email">Corre electrónico:</label>
             <input type="text" class="form-control" required id="email" #email="ngModel" name="email" [(ngModel)]="user.email" />
         </p>
+
+        <div class="image_for_edit" *ngIf="user.image && user.image != 'null'">
+            <img src=""/>
+        </div>
+        <p>
+            <label for="image">Sube tu foto</label>
+            <input type="file" placeholder="Subir imagen..." id="image"/>
+        </p>
+
         <input type="submit" value="Actualizar mis datos" class="btn btn-primary" />
     </form>
 </div>
