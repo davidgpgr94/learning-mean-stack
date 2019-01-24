@@ -1,6 +1,6 @@
 <div class="navigation col-lg-1" *ngIf="identity">
   <h1 class="head-title">
-    <a [routerLink]="['/']">
+    <a [routerLink]="['/']" >
       <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
       {{title}}
     </a>
@@ -9,7 +9,7 @@
     <a href="#">
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>Buscar
     </a>
-    <a [routerLink]="['/artists', 1]">
+    <a [routerLink]="['/artists', 1]" [routerLinkActive]="['actived']">
       <span class="glyphicon glyphicon-star" aria-hidden="true"></span>Artistas
     </a>
     <a href="#">
@@ -25,7 +25,7 @@
     <span id="identity_name">
       {{identity.name}}
     </span>
-    <a [routerLink]="['/mis-datos']">
+    <a [routerLink]="['/mis-datos']" [routerLinkActive]="['actived']">
       <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Mis datos
     </a>
     <a (click)="logout()" class="btn-logout">
