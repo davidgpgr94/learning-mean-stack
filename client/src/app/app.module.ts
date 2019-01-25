@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import {UserEditComponent} from './components/user-edit.component';
 import {ArtistListComponent} from './components/artist-list.component';
 import {HomeComponent} from './components/home.component';
+import {ArtistAddComponent} from './components/artist-add.component';
 
 import {routing, appRoutingProviders} from './app.routing';
 
@@ -15,7 +16,8 @@ import {routing, appRoutingProviders} from './app.routing';
     AppComponent,
     HomeComponent,
     UserEditComponent,
-    ArtistListComponent
+    ArtistListComponent,
+    ArtistAddComponent
   ],
   imports: [
     BrowserModule,

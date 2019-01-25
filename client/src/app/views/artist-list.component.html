@@ -1,7 +1,7 @@
 <div class="head-page" *ngIf="identity">
     <h1>{{titulo}}</h1>
 
-    <a class="btn btn-primary" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+    <a class="btn btn-primary" *ngIf="identity && identity.role == 'ROLE_ADMIN'" [routerLink]="['/new-artist']">
         Añadir artista
     </a>
 </div>
