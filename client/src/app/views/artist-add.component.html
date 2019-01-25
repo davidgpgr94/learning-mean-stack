@@ -23,6 +23,14 @@
                 La descripción es obligatorio
             </span>
         </p>
+        <div *ngIf="is_edit">
+            <div class="image_for_edit" *ngIf="artist.image != 'null'">
+                <img src="{{url + 'get-image-artist/' + artist.image}}"/>
+            </div>
+            <label for="image">Sube la imagen del artista</label>
+            <input id="image" type="file" placeholder="Subir imagen..." (change)="fileChangeEvent($event)"/>
+        </div>
+
         <input type="submit" value="Crear artista" class="btn btn-success" [disabled]="!formArtist.form.valid" />
     </form>
 </div>
