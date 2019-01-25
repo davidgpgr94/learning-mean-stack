@@ -19,6 +19,7 @@ export class ArtistAddComponent implements OnInit {
     public token;
     public url: string;
     public alertMessage;
+    public btn_submit: string;
 
     constructor(
         private _route: ActivatedRoute,
@@ -31,12 +32,13 @@ export class ArtistAddComponent implements OnInit {
         this.token = this._userService.getToken();
         this.url = GLOBAL.url;
         this.artist = new Artist('', '', '');
+        this.btn_submit = 'Crear artista';
     }
 
     ngOnInit(): void {
         console.log('artist-add.component.ts cargado');
     }
-    
+
     onSubmit() {
         console.log(this.artist);
             this._artistService.addArtist(this.token, this.artist).subscribe(
