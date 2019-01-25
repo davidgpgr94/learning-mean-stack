@@ -48,7 +48,8 @@ export class ArtistAddComponent implements OnInit {
                     } else {
                         this.alertMessage = 'El artista se ha creado correctamente';
                         this.artist = response.artist;
-                        // this._router.navigate(['/editar-artista'], response.artist._id); // redirect para editar el artista y poder añadir la imagen
+                        // tslint:disable-next-line:max-line-length
+                        this._router.navigate(['/edit-artist', response.artist._id]); // redirect para editar el artista y poder añadir la imagen
                     }
                 },
                 error => {
